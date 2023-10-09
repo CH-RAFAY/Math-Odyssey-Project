@@ -1,4 +1,4 @@
-# CALCHUB Digital Math Machine Based Project
+# CALCHUB: Math-Machine Based Project
 
 Visit: https://ch-rafay.github.io/CALCHUB/
 
