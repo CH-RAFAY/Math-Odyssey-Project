@@ -21,8 +21,8 @@ body{
 
 .calculator{
     padding: 15px;
-    box-shadow: 0 0 15px #000 ;
-    border: 2px solid rgb(116, 114, 114);
+    box-shadow: 0 0 50px #000 ;
+    border: 4px solid rgb(116, 114, 114);
     border-radius: 15px;
 
 
