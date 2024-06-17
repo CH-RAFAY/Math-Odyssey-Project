@@ -1,6 +1,7 @@
 # CALCHUB: Math-Machine Based Project
 
-Visit: https://ch-rafay.github.io/CALCHUB/
+Visit: https://ch-rafay.github.io/Calculator-Hub/
+Last deployed by @CH-RAFAY CH-RAFAY 2 months ago
 
 CalculatorHub is a versatile online calculator web application, simplifying mathematical calculations with a user-friendly interface. It's an open-source project that covers basic arithmetic, scientific functions, financial calculations, and unit conversions.
 
