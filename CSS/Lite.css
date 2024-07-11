@@ -104,77 +104,9 @@
         width: 150px;
         height: auto;
     }
-    
-    /* Media Queries for responsiveness */
-    @media (max-width: 768px) {
-        .calculator {
-            padding: 15px;
-            width: 90%;
-        }
-    
-        .display input {
-            font-size: 35px;
-            padding: 15px;
-        }
-    
-        button {
-            width: 60px;
-            height: 60px;
-            font-size: 20px;
-            margin: 3px;
-        }
-    
-        #logo {
-            width: 120px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .calculator {
-            padding: 10px;
-            width: 100%;
-        }
-    
-        .display input {
-            font-size: 30px;
-            padding: 10px;
-        }
-    
-        button {
-            width: 55px;
-            height: 55px;
-            font-size: 18px;
-            margin: 2px;
-        }
-    
-        #logo {
-            width: 100px;
-        }
-    }
-    
-    @media (max-width: 380px) {
-        .calculator {
-            padding: 5px;
-            width: 100%;
-        }
-    
-        .display input {
-            font-size: 24px;
-            padding: 8px;
-        }
-    
-        button {
-            width: 50px;
-            height: 50px;
-            font-size: 16px;
-            margin: 2px;
-        }
-    
-        #logo {
-            width: 80px;
-        }
-    }
-    
+
+
+
     .tcon {
         padding: 0% 10%;
     }
@@ -319,5 +251,174 @@
     /* Show Popup */
     .show-popup {
         display: flex;
+    }
+    
+
+
+
+
+
+    
+    /* Media Queries for responsiveness */
+
+    @media (max-width: 1000px)
+    {
+        .popup-content {
+            width: 45%;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 90%;
+            height: 45%;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    }
+
+
+    @media (max-width: 768px) {
+        .calculator {
+            padding: 15px;
+            width: 90%;
+        }
+    
+        .display input {
+            font-size: 35px;
+            padding: 15px;
+        }
+    
+        button {
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            margin: 3px;
+        }
+    
+        #logo {
+            width: 120px;
+        }
+
+        .popup-content {
+            width: 50%;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 90%;
+            height: 45%;
+        }
+
+
+    }
+
+    @media (max-width: 680px)
+    {
+        .popup-content {
+            width: 65%;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 90%;
+            height: 45%;
+
+        }
+
+    }
+    
+
+    @media (max-width: 560px)
+    {
+        .popup-content {
+            width: 70%;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 90%;
+            height: 45%;
+
+        }
+
+    }
+    
+    @media (max-width: 480px) {
+        .calculator {
+            padding: 10px;
+            width: 100%;
+        }
+    
+        .display input {
+            font-size: 30px;
+            padding: 10px;
+        }
+    
+        button {
+            width: 55px;
+            height: 55px;
+            font-size: 18px;
+            margin: 2px;
+        }
+    
+        #logo {
+            width: 100px;
+        }
+
+        .popup-content {
+            width: 75%;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 90%;
+            height: 46%;
+
+        }
+
+
+
+    }
+    
+    @media (max-width: 380px) {
+        .calculator {
+            padding: 5px;
+            width: 100%;
+        }
+    
+        .display input {
+            font-size: 24px;
+            padding: 8px;
+        }
+    
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 16px;
+            margin: 2px;
+        }
+    
+        #logo {
+            width: 80px;
+        }
+
+        .popup-content {
+            width: 85%;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 90%;
+            height: 50%;
+
+        }
+
     }
     
