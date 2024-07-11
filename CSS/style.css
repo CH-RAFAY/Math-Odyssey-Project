@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,126 +6,170 @@
     letter-spacing: 1px;
 }
 
-body{
+body {
     min-height: 100vh;
-    max-width: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
-/*  display: grid;
-    place-items: center; */
-
-    background: linear-gradient( 45deg, #0a0a0a , #3a4452);
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
 }
 
-.calculator{
-    padding: 15px;
-    box-shadow: 0 0 50px #000 ;
-    border: 4px solid rgb(116, 114, 114);
+.calculator {
+    padding: 20px;
+    border: 4px solid #2b2b2b;
     border-radius: 15px;
-
-
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .display input {
-    width: 360px;
+    width: 100%;
     border: none;
     outline: none;
     padding: 20px;
-    margin: 10px;
-    background: transparent;
-    color: #fff;
+    margin: 10px 0;
+    background: #2b2b2b;
+    color: #ffffff;
     font-size: 40px;
     text-align: right;
-    cursor: pointer;
-
-
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-input::placeholder{
-    color: #fff;
+input::placeholder {
+    color: #bbb;
 }
 
-button{
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+button {
     width: 70px;
     height: 70px;
-    margin: 10px;
-    background: transparent;
-    color: #fff;
+    margin: 5px;
+    background: #f5f5f5;
+    color: #333;
     font-size: 22px;
     font-weight: 600;
-    border: 0;
+    border: none;
     border-radius: 50%;
-    box-shadow: -5px -6px 15px #000;
-    outline: 1px solid #313131;
-    outline-offset: 3px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2), -2px -2px 6px rgba(255, 255, 255, 0.7);
     cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 
-button:active{
-    background: #000;
-    transform: translate(2px, 2px);
+button:hover {
+    background: #e0e0e0;
 }
 
-.opr{
-    color: #fbff00;
-    background: #1e1919;
+button:active {
+    background: #cccccc;
+    transform: scale(0.95);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.opr {
+    background: #ff6f61;
+    color: #fff;
     font-weight: 700;
 }
 
-#eqBtn{
-
-    background: rgb(37, 98, 167);
+#eqBtn {
+    background: #1abc9c;
+    color: #fff;
     font-weight: 900;
 }
 
-
-
-/*-----------------LOGO---------------*/
-
-.logo {
-    display:inline;
-
+.sci {
+    background: #3498db;
+    color: #fff;
 }
 
-.logo img
-{
-    width:150px;
-    padding-top:2%;
-    padding-bottom: 4%;
-
+#logo {
+    margin-top: 1%;
+    margin-bottom: 2%;
+    width: 150px;
+    height: auto;
 }
 
-
-/* Media Queries for different screen sizes */
-
+/* Media Queries for responsiveness */
 @media (max-width: 768px) {
-   
     .calculator {
+        padding: 15px;
         width: 90%;
+    }
+
+    .display input {
+        font-size: 35px;
+        padding: 15px;
+    }
+
+    button {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        margin: 3px;
+    }
+
+    #logo {
+        width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator {
         padding: 10px;
+        width: 100%;
     }
 
     .display input {
         font-size: 30px;
+        padding: 10px;
+    }
+
+    button {
+        width: 55px;
+        height: 55px;
+        font-size: 18px;
+        margin: 2px;
+    }
+
+    #logo {
+        width: 100px;
+    }
+}
+
+@media (max-width: 380px) {
+    .calculator {
+        padding: 5px;
+        width: 100%;
+    }
+
+    .display input {
+        font-size: 24px;
+        padding: 8px;
     }
 
     button {
         width: 50px;
         height: 50px;
-        font-size: 18px;
+        font-size: 16px;
+        margin: 2px;
     }
 
+    #logo {
+        width: 80px;
+    }
 
-    .display input 
-{
-
-padding: 60px;
-
-
+    
 }
 
+.tcon {
+    padding: 0% 10%;
 }
-
-
