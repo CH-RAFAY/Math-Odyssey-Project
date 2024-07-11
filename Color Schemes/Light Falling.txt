@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <center>
+        <img src="Images/3D White.png" alt="Logo" id="logo">
+        <div class="tcon">
+            <div class="calculator">
+                <div class="display">
+                    <input type="text" id="inputbox" value="0" placeholder="0" disabled>
+                </div>
+                <div class="row">
+                    <button type="button" class="opr">AC</button>
+                    <button type="button" class="opr">DEL</button>
+                    <button type="button" class="opr">%</button>
+                    <button type="button" class="opr">/</button>
+                    <button type="button" id="sin" class="sci">sin</button>
+                </div>
+                <div class="row">
+                    <button type="button">7</button>
+                    <button type="button">8</button>
+                    <button type="button">9</button>
+                    <button type="button" class="opr">*</button>
+                    <button type="button" id="cos" class="sci">cos</button>
+                </div>
+                <div class="row">
+                    <button type="button">4</button>
+                    <button type="button">5</button>
+                    <button type="button">6</button>
+                    <button type="button" class="opr">+</button>
+                    <button type="button" id="tan" class="sci">tan</button>
+                </div>
+                <div class="row">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button" class="opr">-</button>
+                    <button type="button" id="log" class="sci">log</button>
+                </div>
+                <div class="row">
+                    <button type="button" id="plusMinus">&plusmn;</button>
+                    <button type="button">0</button>
+                    <button type="button">.</button>
+                    <button type="button" id="eqBtn">=</button>
+                    <button type="button" id="sqrt" class="sci">√</button>
+                </div>
+            </div>
+        </div>
+    </center>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 1px;
+        }
+
+        body {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .calculator {
+            padding: 20px;
+            border: 4px solid #2b2b2b;
+            border-radius: 15px;
+            background: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            overflow: hidden;
+            position: relative;
+            z-index: 1; /* Ensure calculator is above falling symbols */
+        }
+
+        .display input {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 20px;
+            margin: 10px 0;
+            background: #2b2b2b;
+            color: #ffffff;
+            font-size: 40px;
+            text-align: right;
+            border-radius: 10px;
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        input::placeholder {
+            color: #bbb;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 70px;
+            height: 70px;
+            margin: 5px;
+            background: #f5f5f5;
+            color: #333;
+            font-size: 22px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2), -2px -2px 6px rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            background: #e0e0e0;
+        }
+
+        button:active {
+            background: #cccccc;
+            transform: scale(0.95);
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .opr {
+            background: #ff6f61;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        #eqBtn {
+            background: #1abc9c;
+            color: #fff;
+            font-weight: 900;
+        }
+
+        .sci {
+            background: #3498db;
+            color: #fff;
+        }
+
+        #logo {
+            margin-top: 1%;
+            margin-bottom: 2%;
+            width: 150px;
+            height: auto;
+        }
+
+        /* Animation for falling symbols */
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+        }
+
+        .symbol {
+            position: absolute;
+            color: #000; /* Black color for symbols */
+            font-size: 60px; /* Larger size */
+            animation: fall 25s linear infinite; /* Slower falling speed */
+            transform: translateX(calc(100vw * -1)); /* Start outside viewport */
+            width: 100vw; /* Fall across entire width */
+            z-index: 0; /* Ensure symbols are behind calculator */
+        }
+
+        .symbol:nth-child(2) {
+            animation-delay: 4s;
+        }
+
+        .symbol:nth-child(3) {
+            animation-delay: 8s;
+        }
+
+        .symbol:nth-child(4) {
+            animation-delay: 12s;
+        }
+
+        .symbol:nth-child(5) {
+            animation-delay: 16s;
+        }
+
+        .symbol:nth-child(6) {
+            animation-delay: 20s;
+        }
+
+        .symbol:nth-child(7) {
+            animation-delay: 24s;
+        }
+
+        .symbol:nth-child(8) {
+            animation-delay: 28s;
+        }
+
+        .symbol:nth-child(9) {
+            animation-delay: 32s;
+        }
+
+        .symbol:nth-child(10) {
+            animation-delay: 36s;
+        }
+
+        .symbol:nth-child(11) {
+            animation-delay: 40s;
+        }
+    </style>
+
+    <!-- Additional script to generate falling symbols -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            const symbols = ['+', '-', '×', '÷', '√', 'π', '∫', '∑', 'θ', '∞'];
+
+            // Generate symbols and append to body
+            symbols.forEach((symbol, index) => {
+                const span = document.createElement('span');
+                span.textContent = symbol;
+                span.classList.add('symbol');
+                span.style.left = `${Math.random() * 100}vw`;
+                span.style.animationDelay = `${index * 4}s`; // Adjust delay for each symbol
+                body.appendChild(span);
+            });
+        });
+    </script>
+</body>
+</html>

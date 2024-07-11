@@ -13,6 +13,8 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    overflow: hidden;
+    position: relative;
 }
 
 .calculator {
@@ -23,6 +25,8 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     max-width: 100%;
     overflow: hidden;
+    position: relative;
+    z-index: 1; /* Ensure calculator is above falling symbols */
 }
 
 .display input {
@@ -166,10 +170,70 @@ button:active {
     #logo {
         width: 80px;
     }
-
-    
 }
 
 .tcon {
     padding: 0% 10%;
+}
+
+/* Animation for falling symbols */
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+}
+
+.symbol {
+    position: absolute;
+    color: #000; /* Black color for symbols */
+    font-size: 60px; /* Larger size */
+    animation: fall 25s linear infinite; /* Slower falling speed */
+    transform: translateX(calc(100vw * -1)); /* Start outside viewport */
+    width: 100vw; /* Fall across entire width */
+    z-index: 0; /* Ensure symbols are behind calculator */
+}
+
+.symbol:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.symbol:nth-child(3) {
+    animation-delay: 8s;
+}
+
+.symbol:nth-child(4) {
+    animation-delay: 12s;
+}
+
+.symbol:nth-child(5) {
+    animation-delay: 16s;
+}
+
+.symbol:nth-child(6) {
+    animation-delay: 20s;
+}
+
+.symbol:nth-child(7) {
+    animation-delay: 24s;
+}
+
+.symbol:nth-child(8) {
+    animation-delay: 28s;
+}
+
+.symbol:nth-child(9) {
+    animation-delay: 32s;
+}
+
+.symbol:nth-child(10) {
+    animation-delay: 36s;
+}
+
+.symbol:nth-child(11) {
+    animation-delay: 40s;
 }
