@@ -29,7 +29,7 @@
         max-width: 100%;
         overflow: hidden;
         position: relative;
-        z-index: 1; /* Ensure calculator is above falling symbols */
+        z-index: 1; 
     }
     
     .display input {
@@ -69,10 +69,12 @@
         box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2), -2px -2px 6px rgba(255, 255, 255, 0.7);
         cursor: pointer;
         transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+        border: 1px solid #cecece;
     }
     
     button:hover {
         background: #e0e0e0;
+        color: #000;
     }
     
     button:active {
