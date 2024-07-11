@@ -7,17 +7,6 @@
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <button id="popupBtn" class="popup-button">License</button>
-
-    <div id="popupOverlay" class="popup-overlay">
-        <div class="popup-content">
-            <img src="logo.png" alt="Company Logo" class="popup-logo">
-            <h2>License Information</h2>
-            <p>This software is licensed under the XYZ license.</p>
-            <p>&copy; 2024 Company Name. All rights reserved.</p>
-            <button id="closeBtn" class="close-button">Close</button>
-        </div>
-    </div>
 
     <div class="tco">
     <center>
@@ -65,14 +54,11 @@
             </div>
         </div>
     </center>
+
+
 </div>
 
-<script src="JavaScript/app.js"></script>
-
-
 <style>
-
-    /* Basic Reset */
 * {
     margin: 0;
     padding: 0;
@@ -81,7 +67,6 @@
     letter-spacing: 1px;
 }
 
-/* Body Styles */
 body {
     min-height: 100vh;
     width: 100%;
@@ -93,7 +78,6 @@ body {
     position: relative;
 }
 
-/* Calculator Styles */
 .calculator {
     padding: 20px;
     border: 4px solid #2b2b2b;
@@ -315,86 +299,12 @@ button:active {
     animation-delay: 40s;
 }
 
-/* Popup Button Styles */
-.popup-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 100px;
-    height: 50px;
-    background: linear-gradient(145deg, #ffffff, #dddddd);
-    border: none;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2),
-                -5px -5px 15px rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.popup-button:active {
-    transform: scale(0.95);
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Popup Overlay Styles */
-.popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-/* Popup Content Styles */
-.popup-content {
-    width: 40%;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    max-width: 90%;
-}
-
-.popup-logo {
-    width: 100px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.close-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #3498db;
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s;
-    font-size: 16px;
-}
-
-.close-button:hover {
-    background: #2980b9;
-}
-
-/* Show Popup */
-.show-popup {
-    display: flex;
-}
-
-
 </style>
 
 
 
+<script src="JavaScript\app.js"></script>
+
+    </script>
 </body>
 </html>

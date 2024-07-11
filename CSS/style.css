@@ -193,7 +193,7 @@ button:active {
     color: #000; /* Black color for symbols */
     font-size: 60px; /* Larger size */
     animation: fall 25s linear infinite; /* Slower falling speed */
-    transform: translateX(calc(100vw * -1)); /* Start outside viewport */
+    transform: translateX(calc(100vw * -2)); /* Start outside viewport */
     width: 100vw; /* Fall across entire width */
     z-index: 0; /* Ensure symbols are behind calculator */
 }
