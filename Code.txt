@@ -609,9 +609,8 @@
 
         }
 
-
-
     }
+
     
     @media (max-width: 380px) {
         .calculator {
@@ -646,6 +645,17 @@
             height: 50%;
 
         }
+
+        .theme-selector {
+                flex-direction: row; 
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                bottom: -15%; 
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+            }
 
     }
 
@@ -688,11 +698,22 @@
         }
 
         @media (max-width: 480px) {
-            .theme-circle {
-                width: 30px;
-                height: 30px;
+
+            .theme-selector {
+                flex-direction: row; 
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                bottom: -25%; 
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
             }
-        }
+
+            .theme-circle {
+                margin: 5px 0; 
+            }
+}
     
 
 

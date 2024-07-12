@@ -609,9 +609,8 @@
 
         }
 
-
-
     }
+
     
     @media (max-width: 380px) {
         .calculator {
@@ -646,6 +645,17 @@
             height: 50%;
 
         }
+
+        .theme-selector {
+                flex-direction: row; 
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                bottom: -15%; 
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+            }
 
     }
 
@@ -687,49 +697,24 @@
             }
         }
 
-
-
-
         @media (max-width: 480px) {
 
-        .theme-selector {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 50%; /* Middle */
-        right: 10px;
-        transform: translateY(-50%);
-        gap: 15px;
-    }
+            .theme-selector {
+                flex-direction: row; 
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                bottom: -25%; 
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+            }
 
-    .theme-circle {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        border: 2px solid black;
-        cursor: pointer;
-        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    }
-
-    .theme-circle:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-    .theme-circle-bottom {
-        position: absolute;
-        bottom: 10px; /* Bottom */
-        right: 10px;
-    }
-
-    .theme-circle-top {
-        position: absolute;
-        top: 10px; /* Top */
-        right: 10px;
-    }
-
-    }
-            
+            .theme-circle {
+                margin: 5px 0; 
+            }
+}
+    
 
 
 </style>
