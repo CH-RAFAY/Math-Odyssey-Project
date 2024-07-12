@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+
     <button id="popupBtn" class="popup-button">License</button>
 
     <div id="popupOverlay" class="popup-overlay">
@@ -20,57 +21,54 @@
     </div>
 
     <div class="tco">
-        <center>
-            <div class="tcon">
-                <div class="theme-selector">
-                    <div class="theme-circle theme1"></div>
-                    <div class="theme-circle theme2"></div>
-                    <div class="theme-circle theme3"></div>
-                    <div class="theme-circle theme4"></div>
+    <center>
+        <div class="tcon">
+            <div class="calculator">
+                <div class="display">
+                    <input type="text" id="inputbox" value="0" placeholder="0" disabled>
                 </div>
-                <div class="calculator">
-                    <div class="display">
-                        <input type="text" id="inputbox" value="0" placeholder="0" disabled>
-                    </div>
-                    <div class="row">
-                        <button type="button" class="opr">AC</button>
-                        <button type="button" class="opr">DEL</button>
-                        <button type="button" class="opr">%</button>
-                        <button type="button" class="opr">/</button>
-                        <button type="button" id="sin" class="sci">sin</button>
-                    </div>
-                    <div class="row">
-                        <button type="button">7</button>
-                        <button type="button">8</button>
-                        <button type="button">9</button>
-                        <button type="button" class="opr">*</button>
-                        <button type="button" id="cos" class="sci">cos</button>
-                    </div>
-                    <div class="row">
-                        <button type="button">4</button>
-                        <button type="button">5</button>
-                        <button type="button">6</button>
-                        <button type="button" class="opr">+</button>
-                        <button type="button" id="tan" class="sci">tan</button>
-                    </div>
-                    <div class="row">
-                        <button type="button">1</button>
-                        <button type="button">2</button>
-                        <button type="button">3</button>
-                        <button type="button" class="opr">-</button>
-                        <button type="button" id="log" class="sci">log</button>
-                    </div>
-                    <div class="row">
-                        <button type="button" id="plusMinus">&plusmn;</button>
-                        <button type="button">0</button>
-                        <button type="button">.</button>
-                        <button type="button" id="eqBtn">=</button>
-                        <button type="button" id="sqrt" class="sci">√</button>
-                    </div>
+                <div class="row">
+                    <button type="button" class="opr">AC</button>
+                    <button type="button" class="opr">DEL</button>
+                    <button type="button" class="opr">%</button>
+                    <button type="button" class="opr">/</button>
+                    <button type="button" id="sin" class="sci">sin</button>
+                </div>
+                <div class="row">
+                    <button type="button">7</button>
+                    <button type="button">8</button>
+                    <button type="button">9</button>
+                    <button type="button" class="opr">*</button>
+                    <button type="button" id="cos" class="sci">cos</button>
+                </div>
+                <div class="row">
+                    <button type="button">4</button>
+                    <button type="button">5</button>
+                    <button type="button">6</button>
+                    <button type="button" class="opr">+</button>
+                    <button type="button" id="tan" class="sci">tan</button>
+                </div>
+                <div class="row">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button" class="opr">-</button>
+                    <button type="button" id="log" class="sci">log</button>
+                </div>
+                <div class="row">
+                    <button type="button" id="plusMinus">&plusmn;</button>
+                    <button type="button">0</button>
+                    <button type="button">.</button>
+                    <button type="button" id="eqBtn">=</button>
+                    <button type="button" id="sqrt" class="sci">√</button>
                 </div>
             </div>
-        </center>
-    </div>
+        </div>
+    </center>
+
+
+</div>
+
 
 <style>
     /* Popup Button Styles */
@@ -648,51 +646,6 @@
         }
 
     }
-
-    .theme-selector {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            gap: 15px;
-        }
-
-        .theme-circle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid black;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-
-        .theme-circle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .theme1 { background-color: #ff6f61; }
-        .theme2 { background-color: #1abc9c; }
-        .theme3 { background-color: #3498db; }
-        .theme4 { background-color: #f1c40f; }
-
-        /* Media Queries for responsive circles */
-        @media (max-width: 768px) {
-            .theme-circle {
-                width: 35px;
-                height: 35px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .theme-circle {
-                width: 30px;
-                height: 30px;
-            }
-        }
     
 
 
@@ -702,24 +655,6 @@
 
 <script src="JavaScript\app.js"></script>
 
-<script>
-    document.querySelector('.theme1').addEventListener('click', function() {
-    window.location.href = 'theme1.html'; // Change this to the actual theme page
-});
-
-document.querySelector('.theme2').addEventListener('click', function() {
-    window.location.href = 'theme2.html'; // Change this to the actual theme page
-});
-
-document.querySelector('.theme3').addEventListener('click', function() {
-    window.location.href = 'theme3.html'; // Change this to the actual theme page
-});
-
-document.querySelector('.theme4').addEventListener('click', function() {
-    window.location.href = 'theme4.html'; // Change this to the actual theme page
-});
-</script>
-
-
+    </script>
 </body>
 </html>
