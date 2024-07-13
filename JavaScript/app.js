@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         span.textContent = symbol;
         span.classList.add('symbol');
         span.style.left = `${Math.random() * 100}vw`;
-        span.style.animationDelay = `${index * 4}s`; 
+        span.style.animationDelay = `${index * 3}s`; 
         body.appendChild(span);
     });
 
