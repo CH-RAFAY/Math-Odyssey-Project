@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Images\icons8-math-96.png">
     <title>Scientific Calculator</title>
-    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-
     <button id="popupBtn" class="popup-button">License</button>
 
     <div id="popupOverlay" class="popup-overlay">
@@ -21,205 +20,202 @@
     </div>
 
     <div class="tco">
-    <center>
-        <div class="tcon">
-            <div class="calculator">
-                <div class="display">
-                    <input type="text" id="inputbox" value="0" placeholder="0" disabled>
+        <center>
+            <div class="tcon">
+                <div class="theme-selector">
+                    <div class="theme-circle theme1 active" data-theme="theme1"></div>
+                    <div class="theme-circle theme2" data-theme="theme2"></div>
+                    <div class="theme-circle theme3" data-theme="theme3"></div>
+                    <div class="theme-circle theme4" data-theme="theme4"></div>
                 </div>
-                <div class="row">
-                    <button type="button" class="opr">AC</button>
-                    <button type="button" class="opr">DEL</button>
-                    <button type="button" class="opr">%</button>
-                    <button type="button" class="opr">/</button>
-                    <button type="button" id="sin" class="sci">sin</button>
-                </div>
-                <div class="row">
-                    <button type="button">7</button>
-                    <button type="button">8</button>
-                    <button type="button">9</button>
-                    <button type="button" class="opr">*</button>
-                    <button type="button" id="cos" class="sci">cos</button>
-                </div>
-                <div class="row">
-                    <button type="button">4</button>
-                    <button type="button">5</button>
-                    <button type="button">6</button>
-                    <button type="button" class="opr">+</button>
-                    <button type="button" id="tan" class="sci">tan</button>
-                </div>
-                <div class="row">
-                    <button type="button">1</button>
-                    <button type="button">2</button>
-                    <button type="button">3</button>
-                    <button type="button" class="opr">-</button>
-                    <button type="button" id="log" class="sci">log</button>
-                </div>
-                <div class="row">
-                    <button type="button" id="plusMinus">&plusmn;</button>
-                    <button type="button">0</button>
-                    <button type="button">.</button>
-                    <button type="button" id="eqBtn">=</button>
-                    <button type="button" id="sqrt" class="sci">√</button>
+                <div class="calculator">
+                    <div class="display">
+                        <input type="text" id="inputbox" value="0" placeholder="0" disabled>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="opr">AC</button>
+                        <button type="button" class="opr">DEL</button>
+                        <button type="button" class="opr">%</button>
+                        <button type="button" class="opr">/</button>
+                        <button type="button" id="sin" class="sci">sin</button>
+                    </div>
+                    <div class="row">
+                        <button type="button">7</button>
+                        <button type="button">8</button>
+                        <button type="button">9</button>
+                        <button type="button" class="opr">*</button>
+                        <button type="button" id="cos" class="sci">cos</button>
+                    </div>
+                    <div class="row">
+                        <button type="button">4</button>
+                        <button type="button">5</button>
+                        <button type="button">6</button>
+                        <button type="button" class="opr">+</button>
+                        <button type="button" id="tan" class="sci">tan</button>
+                    </div>
+                    <div class="row">
+                        <button type="button">1</button>
+                        <button type="button">2</button>
+                        <button type="button">3</button>
+                        <button type="button" class="opr">-</button>
+                        <button type="button" id="log" class="sci">log</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" id="plusMinus">&plusmn;</button>
+                        <button type="button">0</button>
+                        <button type="button">.</button>
+                        <button type="button" id="eqBtn">=</button>
+                        <button type="button" id="sqrt" class="sci">√</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </center>
-
-
-</div>
-
+        </center>
+    </div>
+    <div class="peel-off"></div>
 
 <style>
-    /* Popup Button Styles */
-.popup-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 100px;
-    height: 50px;
-    background: linear-gradient(145deg, #ffffff, #dddddd);
-    border: none;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2),
-                -5px -5px 15px rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    font-size: 16px;
-    font-weight: bold;
-}
+    .popup-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 100px;
+        height: 50px;
+        background: linear-gradient(145deg, #ffffff, #dddddd);
+        border: none;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2),
+                    -5px -5px 15px rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        font-size: 16px;
+        font-weight: bold;
+    }
 
-.popup-button:active {
-    transform: scale(0.95);
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
+    .popup-button:active {
+        transform: scale(0.95);
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
 
-/* Popup Overlay Styles */
-.popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-/* Popup Content Styles */
-.popup-content {
-    width: 40%;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    max-width: 90%;
-    height: 40%;
-}
-
-.popup-logo {
-    width: 100px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.close-button {
-    width: 100px;
-    height: 50px;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #3498db;
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s;
-    font-size: 16px;
-}
-
-.close-button:hover {
-    background: #2980b9;
-}
-
-/* Show Popup */
-.show-popup {
-    display: flex;
-}
-
-/* Media Queries for responsiveness */
-
-@media (max-width: 1000px) {
-    .popup-content {
-        width: 45%;
-        padding: 20px;
-        background: #ffffff;
-        border-radius: 20px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        max-width: 90%;
-        height: 45%;
+    .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
         justify-content: center;
         align-items: center;
+        z-index: 1000;
     }
-}
 
-@media (max-width: 680px) {
     .popup-content {
-        width: 65%;
+        width: 40%;
         padding: 20px;
         background: #ffffff;
         border-radius: 20px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         text-align: center;
         max-width: 90%;
-        height: 45%;
+        height: 40%;
     }
-}
 
-@media (max-width: 560px) {
-    .popup-content {
-        width: 70%;
-        padding: 20px;
-        background: #ffffff;
-        border-radius: 20px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        max-width: 90%;
-        height: 45%;
+    .popup-logo {
+        width: 100px;
+        height: auto;
+        margin-bottom: 20px;
     }
-}
 
-@media (max-width: 480px) {
-    .popup-content {
-        width: 75%;
-        padding: 20px;
-        background: #ffffff;
-        border-radius: 20px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        max-width: 90%;
-        height: 46%;
+    .close-button {
+        width: 100px;
+        height: 50px;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #3498db;
+        color: #ffffff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: 16px;
     }
-}
 
-@media (max-width: 380px) {
-    .popup-content {
-        width: 85%;
-        padding: 20px;
-        background: #ffffff;
-        border-radius: 20px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        max-width: 90%;
-        height: 50%;
+    .close-button:hover {
+        background: #2980b9;
     }
-}
 
-    /* Basic Reset */
+    .show-popup {
+        display: flex;
+    }
+
+    @media (max-width: 1000px) {
+        .popup-content {
+            width: 45%;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 90%;
+            height: 45%;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 680px) {
+        .popup-content {
+            width: 65%;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 90%;
+            height: 45%;
+        }
+    }
+
+    @media (max-width: 560px) {
+        .popup-content {
+            width: 70%;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 90%;
+            height: 45%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .popup-content {
+            width: 75%;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 90%;
+            height: 46%;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .popup-content {
+            width: 85%;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 90%;
+            height: 50%;
+        }
+    }
+
     * {
         margin: 0;
         padding: 0;
@@ -228,7 +224,6 @@
         letter-spacing: 1px;
     }
     
-    /* Body Styles */
     body {
         min-height: 100vh;
         width: 100%;
@@ -240,7 +235,6 @@
         position: relative;
     }
     
-    /* Calculator Styles */
     .calculator {
         padding: 20px;
         border: 4px solid #2b2b2b;
@@ -250,7 +244,7 @@
         max-width: 100%;
         overflow: hidden;
         position: relative;
-        z-index: 1; /* Ensure calculator is above falling symbols */
+        z-index: 1;
     }
     
     .display input {
@@ -288,17 +282,17 @@
         border: none;
         border-radius: 50%;
         background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
-    border: 1px solid #999;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2), 
-                inset -3px -3px 8px rgba(255, 255, 255, 0.5);
-    transition: transform 0.2s, box-shadow 0.2s;
+        border: 1px solid #999;
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2), 
+                    inset -3px -3px 8px rgba(255, 255, 255, 0.5);
+        transition: transform 0.2s, box-shadow 0.2s;
     }
     
     button:hover {
-    background: linear-gradient(145deg, #e0e0e0, #d0d0d0);
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2),
-                inset -2px -2px 10px rgba(255, 255, 255, 0.9);
-}
+        background: linear-gradient(145deg, #e0e0e0, #d0d0d0);
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2),
+                    inset -2px -2px 10px rgba(255, 255, 255, 0.9);
+    }
     
     button:active {
         background: #cccccc;
@@ -330,13 +324,10 @@
         height: auto;
     }
 
-
-
     .tcon {
         padding: 0% 10%;
     }
     
-    /* Animation for falling symbols */
     @keyframes fall {
         0% {
             transform: translateY(-100vh);
@@ -350,160 +341,25 @@
     
     .symbol {
         position: absolute;
-        color: #000; /* Black color for symbols */
-        font-size: 60px; /* Larger size */
-        animation: fall 25s linear infinite; /* Slower falling speed */
-        transform: translateX(calc(100vw * -2)); /* Start outside viewport */
-        width: 100vw; /* Fall across entire width */
-        z-index: 0; /* Ensure symbols are behind calculator */
+        color: #000;
+        font-size: 60px;
+        animation: fall 25s linear infinite;
+        transform: translateX(calc(100vw * -2));
+        width: 100vw;
+        z-index: 0;
     }
     
-    .symbol:nth-child(2) {
-        animation-delay: 4s;
-    }
+    .symbol:nth-child(2) { animation-delay: 4s; }
+    .symbol:nth-child(3) { animation-delay: 8s; }
+    .symbol:nth-child(4) { animation-delay: 12s; }
+    .symbol:nth-child(5) { animation-delay: 16s; }
+    .symbol:nth-child(6) { animation-delay: 20s; }
+    .symbol:nth-child(7) { animation-delay: 24s; }
+    .symbol:nth-child(8) { animation-delay: 28s; }
+    .symbol:nth-child(9) { animation-delay: 32s; }
+    .symbol:nth-child(10) { animation-delay: 36s; }
+    .symbol:nth-child(11) { animation-delay: 40s; }
     
-    .symbol:nth-child(3) {
-        animation-delay: 8s;
-    }
-    
-    .symbol:nth-child(4) {
-        animation-delay: 12s;
-    }
-    
-    .symbol:nth-child(5) {
-        animation-delay: 16s;
-    }
-    
-    .symbol:nth-child(6) {
-        animation-delay: 20s;
-    }
-    
-    .symbol:nth-child(7) {
-        animation-delay: 24s;
-    }
-    
-    .symbol:nth-child(8) {
-        animation-delay: 28s;
-    }
-    
-    .symbol:nth-child(9) {
-        animation-delay: 32s;
-    }
-    
-    .symbol:nth-child(10) {
-        animation-delay: 36s;
-    }
-    
-    .symbol:nth-child(11) {
-        animation-delay: 40s;
-    }
-    
-    /* Popup Button Styles */
-    .popup-button {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        width: 100px;
-        height: 50px;
-        background: linear-gradient(145deg, #ffffff, #dddddd);
-        border: none;
-        border-radius: 10px;
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2),
-                    -5px -5px 15px rgba(255, 255, 255, 0.5);
-        cursor: pointer;
-        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        font-size: 16px;
-        font-weight: bold;
-    }
-    
-    .popup-button:active {
-        transform: scale(0.95);
-        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Popup Overlay Styles */
-    .popup-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(10px);
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
-    
-    /* Popup Content Styles */
-    .popup-content {
-        width: 40%;
-        padding: 20px;
-        background: #ffffff;
-        border-radius: 20px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        max-width: 90%;
-        height: 40%;
-    }
-    
-    .popup-logo {
-        width: 100px;
-        height: auto;
-        margin-bottom: 20px;
-    }
-    
-    .close-button {
-        width: 100px;
-        height: 50px;
-        margin-top: 20px;
-        padding: 10px 20px;
-        background: #3498db;
-        color: #ffffff;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: background 0.3s;
-        font-size: 16px;
-
-    }
-    
-    .close-button:hover {
-        background: #2980b9;
-    }
-    
-    /* Show Popup */
-    .show-popup {
-        display: flex;
-    }
-    
-
-
-
-
-
-    
-    /* Media Queries for responsiveness */
-
-    @media (max-width: 1000px)
-    {
-        .popup-content {
-            width: 45%;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            max-width: 90%;
-            height: 45%;
-            justify-content: center;
-            align-items: center;
-        }
-        
-    }
-
-
     @media (max-width: 768px) {
         .calculator {
             padding: 15px;
@@ -525,52 +381,6 @@
         #logo {
             width: 120px;
         }
-
-        .popup-content {
-            width: 50%;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            max-width: 90%;
-            height: 45%;
-        }
-
-
-    }
-
-    @media (max-width: 680px)
-    {
-        .popup-content {
-            width: 65%;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            max-width: 90%;
-            height: 45%;
-
-        }
-
-    }
-    
-
-    @media (max-width: 560px)
-    {
-        .popup-content {
-            width: 70%;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            max-width: 90%;
-            height: 45%;
-
-        }
-
     }
     
     @media (max-width: 480px) {
@@ -594,21 +404,6 @@
         #logo {
             width: 100px;
         }
-
-        .popup-content {
-            width: 75%;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            max-width: 90%;
-            height: 46%;
-
-        }
-
-
-
     }
     
     @media (max-width: 380px) {
@@ -633,28 +428,139 @@
             width: 80px;
         }
 
-        .popup-content {
-            width: 85%;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            max-width: 90%;
-            height: 50%;
+        .theme-selector {
+            flex-direction: row; 
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: -15%; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+        }
+    }
 
+    .theme-selector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        gap: 15px;
+    }
+
+    .theme-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
+        background: linear-gradient(to bottom right, var(--color1), var(--color2));
+    }
+
+    .theme-circle:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .theme-circle.active {
+        transform: scale(1.2);
+        border: 4px solid #fff;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    }
+
+    .theme1 { --color1: #ff6f61; --color2: #ff9a8f; }
+    .theme2 { --color1: #1abc9c; --color2: #48c9b0; }
+    .theme3 { --color1: #3498db; --color2: #5dade2; }
+    .theme4 { --color1: #f1c40f; --color2: #f4d03f; }
+
+    .peel-off {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        transition: clip-path 0.5s ease-in-out;
+        clip-path: circle(0% at 100% 50%);
+    }
+
+    .peel-off.active {
+        clip-path: circle(150% at 100% 50%);
+    }
+
+    @media (max-width: 768px) {
+        .theme-circle {
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .theme-selector {
+            flex-direction: row; 
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: -25%; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
         }
 
+        .theme-circle {
+            margin: 5px 0; 
+        }
     }
-    
-
-
 </style>
-
-
 
 <script src="JavaScript\app.js"></script>
 
-    </script>
+<script>
+    const themeCircles = document.querySelectorAll('.theme-circle');
+    const peelOff = document.querySelector('.peel-off');
+    let currentTheme = 'theme1';
+
+    themeCircles.forEach(circle => {
+        circle.addEventListener('click', function() {
+            const newTheme = this.dataset.theme;
+            if (newTheme !== currentTheme) {
+                currentTheme = newTheme;
+                updateActiveCircle(this);
+                triggerPeelOffTransition(this);
+            }
+        });
+    });
+
+    function updateActiveCircle(activeCircle) {
+        themeCircles.forEach(circle => circle.classList.remove('active'));
+        activeCircle.classList.add('active');
+    }
+
+    function triggerPeelOffTransition(circle) {
+        const style = getComputedStyle(circle);
+        const gradientColor = style.getPropertyValue('--color1');
+        
+        peelOff.style.background = gradientColor;
+        peelOff.classList.add('active');
+
+        setTimeout(() => {
+            peelOff.classList.remove('active');
+            console.log(`Switched to theme: ${currentTheme}`);
+        }, 500);
+    }
+
+    document.getElementById('popupBtn').addEventListener('click', function() {
+        document.getElementById('popupOverlay').classList.add('show-popup');
+    });
+
+    document.getElementById('closeBtn').addEventListener('click', function() {
+        document.getElementById('popupOverlay').classList.remove('show-popup');
+    });
+</script>
+
 </body>
 </html>
