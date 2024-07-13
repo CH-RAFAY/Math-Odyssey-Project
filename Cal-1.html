@@ -7,6 +7,7 @@
     <title>Scientific Calculator</title>
 </head>
 <body>
+    <div class="peel-off"></div>
     <button id="popupBtn" class="popup-button">License</button>
 
     <div id="popupOverlay" class="popup-overlay">
@@ -23,11 +24,12 @@
         <center>
             <div class="tcon">
                 <div class="theme-selector">
-                    <div class="theme-circle theme1 active" data-theme="theme1"></div>
-                    <div class="theme-circle theme2" data-theme="theme2"></div>
-                    <div class="theme-circle theme3" data-theme="theme3"></div>
-                    <div class="theme-circle theme4" data-theme="theme4"></div>
+                    <div class="theme-circle theme1" data-theme="Cal-1"></div>
+                    <div class="theme-circle theme2" data-theme="Cal-2"></div>
+                    <div class="theme-circle theme3" data-theme="Cal-3"></div>
+                    <div class="theme-circle theme4" data-theme="Cal-4"></div>
                 </div>
+                
                 <div class="calculator">
                     <div class="display">
                         <input type="text" id="inputbox" value="0" placeholder="0" disabled>
@@ -74,6 +76,9 @@
     <div class="peel-off"></div>
 
 <style>
+
+
+
     .popup-button {
         position: fixed;
         top: 20px;
@@ -127,23 +132,6 @@
         margin-bottom: 20px;
     }
 
-    .close-button {
-        width: 100px;
-        height: 50px;
-        margin-top: 20px;
-        padding: 10px 20px;
-        background: #3498db;
-        color: #ffffff;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: background 0.3s;
-        font-size: 16px;
-    }
-
-    .close-button:hover {
-        background: #2980b9;
-    }
 
     .show-popup {
         display: flex;
@@ -243,7 +231,7 @@
         border: 4px solid #2b2b2b;
         border-radius: 15px;
         background: #ffffff;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         max-width: 100%;
         overflow: hidden;
         position: relative;
@@ -345,7 +333,7 @@
     .symbol {
         position: absolute;
         color: #000;
-        font-size: 60px;
+        font-size: 70px;
         animation: fall 25s linear infinite;
         transform: translateX(calc(100vw * -2));
         width: 100vw;
@@ -481,20 +469,20 @@
     .theme4 { --color1: #f1c40f; --color2: #f4d03f; }
 
     .peel-off {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 9999;
-        transition: clip-path 0.5s ease-in-out;
-        clip-path: circle(0% at 100% 50%);
-    }
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: clip-path 0.5s ease-in-out;
+            clip-path: circle(0% at 50% 50%);
+        }
 
-    .peel-off.active {
-        clip-path: circle(150% at 100% 50%);
-    }
+        .peel-off.active {
+            clip-path: circle(150% at 50% 50%);
+        }
 
     @media (max-width: 768px) {
         .theme-circle {
@@ -519,52 +507,64 @@
             margin: 5px 0; 
         }
     }
+
+    .close-button {
+        width: 100px;
+        height: 50px;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #3498db;
+        color: #ffffff;
+        border: 3px solid rgb(13, 121, 180);
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: 16px;
+    }
+
+    .close-button:hover {
+        background: #2980b9;
+    }
+
+
+    .peel-off {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: clip-path 0.5s ease-in-out;
+    clip-path: circle(0% at 50% 50%);
+}
+
+.peel-off.active {
+    clip-path: circle(150% at 50% 50%);
+}
+
+.theme-circle.active {
+    transform: scale(1.2);
+    border: 4px solid #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+
+
+
 </style>
 
 <script src="JavaScript\app.js"></script>
 
-<script>
-    const themeCircles = document.querySelectorAll('.theme-circle');
-    const peelOff = document.querySelector('.peel-off');
-    let currentTheme = 'theme1';
-
-    themeCircles.forEach(circle => {
-        circle.addEventListener('click', function() {
-            const newTheme = this.dataset.theme;
-            if (newTheme !== currentTheme) {
-                currentTheme = newTheme;
-                updateActiveCircle(this);
-                triggerPeelOffTransition(this);
-            }
-        });
-    });
-
-    function updateActiveCircle(activeCircle) {
-        themeCircles.forEach(circle => circle.classList.remove('active'));
-        activeCircle.classList.add('active');
-    }
-
-    function triggerPeelOffTransition(circle) {
-        const style = getComputedStyle(circle);
-        const gradientColor = style.getPropertyValue('--color1');
-        
-        peelOff.style.background = gradientColor;
-        peelOff.classList.add('active');
-
-        setTimeout(() => {
-            peelOff.classList.remove('active');
-            console.log(`Switched to theme: ${currentTheme}`);
-        }, 500);
-    }
-
-    document.getElementById('popupBtn').addEventListener('click', function() {
-        document.getElementById('popupOverlay').classList.add('show-popup');
-    });
-
-    document.getElementById('closeBtn').addEventListener('click', function() {
-        document.getElementById('popupOverlay').classList.remove('show-popup');
-    });
 </script>
+
+
 
 </body>
 </html>

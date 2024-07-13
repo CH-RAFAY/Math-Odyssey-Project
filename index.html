@@ -296,20 +296,19 @@
                 document.querySelector('.content').style.opacity = '0';
                 setTimeout(() => {
                     document.querySelector('.overlay').style.display = 'none';
-                    window.location.href = 'Cal-1.html'; // Redirect to calculator page
+                    window.location.href = 'Cal-1.html'; 
                 }, 50);
             }, 2000);
         }
 
         function startShapeAnimation() {
-            for (let i = 0; i < 50; i++) { // Reduced quantity to 50
+            for (let i = 0; i < 50; i++) { 
                 setTimeout(createShape, Math.random() * 5000);
             }
         }
 
         setTimeout(openDoors, 1000);
-        setTimeout(showContent, 10000); // Adjusted delay for content showing
-
+        setTimeout(showContent, 10000); 
     </script>
 </body>
 </html>

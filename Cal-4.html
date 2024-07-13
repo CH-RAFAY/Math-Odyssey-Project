@@ -7,6 +7,7 @@
     <title>Scientific Calculator</title>
 </head>
 <body>
+    <div class="peel-off"></div>
     <button id="popupBtn" class="popup-button">License</button>
 
     <div id="popupOverlay" class="popup-overlay">
@@ -23,10 +24,10 @@
         <center>
             <div class="tcon">
                 <div class="theme-selector">
-                    <div class="theme-circle theme1 active" data-theme="theme1"></div>
-                    <div class="theme-circle theme2" data-theme="theme2"></div>
-                    <div class="theme-circle theme3" data-theme="theme3"></div>
-                    <div class="theme-circle theme4" data-theme="theme4"></div>
+                    <div class="theme-circle theme1" data-theme="Cal-1"></div>
+                    <div class="theme-circle theme2" data-theme="Cal-2"></div>
+                    <div class="theme-circle theme3" data-theme="Cal-3"></div>
+                    <div class="theme-circle theme4" data-theme="Cal-4"></div>
                 </div>
                 <div class="calculator">
                     <div class="display">
@@ -74,6 +75,13 @@
     <div class="peel-off"></div>
 
 <style>
+
+#popupBtn
+{
+    color: #111111;
+}
+
+
     .popup-button {
         position: fixed;
         top: 20px;
@@ -216,106 +224,126 @@
         }
     }
 
+
+    /*------------------Calculator------------------------------*/
+
+    #closeBtn
+{
+    width: 100px;
+    height: 50px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 16px;
+}
+
+
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, Helvetica, sans-serif;
-        letter-spacing: 1px;
-    }
-    
-    body {
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .calculator {
-        padding: 20px;
-        border: 4px solid #2b2b2b;
-        border-radius: 15px;
-        background: #ffffff;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        max-width: 100%;
-        overflow: hidden;
-        position: relative;
-        z-index: 1;
-    }
-    
-    .display input {
-        width: 100%;
-        border: none;
-        outline: none;
-        padding: 20px;
-        margin: 10px 0;
-        background: #2b2b2b;
-        color: #ffffff;
-        font-size: 40px;
-        text-align: right;
-        border-radius: 10px;
-        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
-    }
-    
-    input::placeholder {
-        color: #bbb;
-    }
-    
-    .row {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-    }
-    
-    button {
-        width: 70px;
-        height: 70px;
-        margin: 5px;
-        background: #f5f5f5;
-        color: #333;
-        font-size: 22px;
-        font-weight: 600;
-        border: none;
-        border-radius: 50%;
-        background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
-        border: 1px solid #999;
-        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2), 
-                    inset -3px -3px 8px rgba(255, 255, 255, 0.5);
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-    
-    button:hover {
-        background: linear-gradient(145deg, #e0e0e0, #d0d0d0);
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2),
-                    inset -2px -2px 10px rgba(255, 255, 255, 0.9);
-    }
-    
-    button:active {
-        background: #cccccc;
-        transform: scale(0.95);
-        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
-    }
-    
-    .opr {
-        background: #ff6f61;
-        color: #fff;
-        font-weight: 700;
-    }
-    
-    #eqBtn {
-        background: #1abc9c;
-        color: #fff;
-        font-weight: 900;
-    }
-    
-    .sci {
-        background: #3498db;
-        color: #fff;
-    }
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ba5370, #f4e2d8);
+        }
+
+        .calculator {
+            padding: 25px;
+            border-radius: 20px;
+            background: #2c2e3e;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .display input {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 25px;
+            margin: 10px 0 20px;
+            background: #1f2132;
+            color: #ffffff;
+            font-size: 36px;
+            text-align: right;
+            border-radius: 10px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        button {
+            width: 70px;
+            height: 70px;
+            margin: 4px;
+            background: #3d4054;
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 500;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        button:hover {
+            background: #4a4d63;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .opr {
+            background: #b8988f;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .opr:hover {
+            background: #ff8f6b;
+        }
+
+        #eqBtn {
+            background: #4ecdc4;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        #eqBtn:hover {
+            background: #45b7aa;
+        }
+
+        .sci {
+            background: #6a5acd;
+            color: #ffffff;
+        }
+
+        .sci:hover {
+            background: #7a6bdd;
+        }
+
+
     
     #logo {
         margin-top: 1%;
@@ -325,7 +353,7 @@
     }
 
     .tcon {
-        padding: 0% 10%;
+        padding: 0% 5%;
     }
     
     @keyframes fall {
@@ -340,14 +368,14 @@
     }
     
     .symbol {
-        position: absolute;
-        color: #000;
-        font-size: 60px;
-        animation: fall 25s linear infinite;
-        transform: translateX(calc(100vw * -2));
-        width: 100vw;
-        z-index: 0;
-    }
+    position: absolute;
+    color: #000; 
+    font-size: 70px;
+    animation: fall 25s linear infinite;
+    transform: translateX(calc(100vw * -2));
+    width: 100vw;
+    z-index: -1; 
+}
     
     .symbol:nth-child(2) { animation-delay: 4s; }
     .symbol:nth-child(3) { animation-delay: 8s; }
@@ -458,6 +486,7 @@
         cursor: pointer;
         transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
         background: linear-gradient(to bottom right, var(--color1), var(--color2));
+        border: px solid rgb(0, 0, 0);
     }
 
     .theme-circle:hover {
@@ -477,20 +506,20 @@
     .theme4 { --color1: #f1c40f; --color2: #f4d03f; }
 
     .peel-off {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 9999;
-        transition: clip-path 0.5s ease-in-out;
-        clip-path: circle(0% at 100% 50%);
-    }
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: clip-path 0.5s ease-in-out;
+            clip-path: circle(0% at 50% 50%);
+        }
 
-    .peel-off.active {
-        clip-path: circle(150% at 100% 50%);
-    }
+        .peel-off.active {
+            clip-path: circle(150% at 50% 50%);
+        }
 
     @media (max-width: 768px) {
         .theme-circle {
@@ -515,52 +544,40 @@
             margin: 5px 0; 
         }
     }
+
+    .peel-off {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: clip-path 0.5s ease-in-out;
+    clip-path: circle(0% at 50% 50%);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.peel-off.active {
+    clip-path: circle(150% at 50% 50%);
+}
+
+.theme-circle.active {
+    transform: scale(1.2);
+    border: 4px solid #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
 </style>
 
 <script src="JavaScript\app.js"></script>
 
-<script>
-    const themeCircles = document.querySelectorAll('.theme-circle');
-    const peelOff = document.querySelector('.peel-off');
-    let currentTheme = 'theme1';
 
-    themeCircles.forEach(circle => {
-        circle.addEventListener('click', function() {
-            const newTheme = this.dataset.theme;
-            if (newTheme !== currentTheme) {
-                currentTheme = newTheme;
-                updateActiveCircle(this);
-                triggerPeelOffTransition(this);
-            }
-        });
-    });
-
-    function updateActiveCircle(activeCircle) {
-        themeCircles.forEach(circle => circle.classList.remove('active'));
-        activeCircle.classList.add('active');
-    }
-
-    function triggerPeelOffTransition(circle) {
-        const style = getComputedStyle(circle);
-        const gradientColor = style.getPropertyValue('--color1');
-        
-        peelOff.style.background = gradientColor;
-        peelOff.classList.add('active');
-
-        setTimeout(() => {
-            peelOff.classList.remove('active');
-            console.log(`Switched to theme: ${currentTheme}`);
-        }, 500);
-    }
-
-    document.getElementById('popupBtn').addEventListener('click', function() {
-        document.getElementById('popupOverlay').classList.add('show-popup');
-    });
-
-    document.getElementById('closeBtn').addEventListener('click', function() {
-        document.getElementById('popupOverlay').classList.remove('show-popup');
-    });
-</script>
 
 </body>
 </html>
+
+
