@@ -220,105 +220,99 @@
     /*------------------Calculator------------------------------*/
 
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, Helvetica, sans-serif;
-        letter-spacing: 1px;
-    }
-    
-    body {
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .calculator {
-        padding: 20px;
-        border: 4px solid #2b2b2b;
-        border-radius: 15px;
-        background: #ffffff;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        max-width: 100%;
-        overflow: hidden;
-        position: relative;
-        z-index: 1;
-    }
-    
-    .display input {
-        width: 100%;
-        border: none;
-        outline: none;
-        padding: 20px;
-        margin: 10px 0;
-        background: #2b2b2b;
-        color: #ffffff;
-        font-size: 40px;
-        text-align: right;
-        border-radius: 10px;
-        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
-    }
-    
-    input::placeholder {
-        color: #bbb;
-    }
-    
-    .row {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-    }
-    
-    button {
-        width: 70px;
-        height: 70px;
-        margin: 5px;
-        background: #f5f5f5;
-        color: #333;
-        font-size: 22px;
-        font-weight: 600;
-        border: none;
-        border-radius: 50%;
-        background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
-        border: 1px solid #999;
-        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2), 
-                    inset -3px -3px 8px rgba(255, 255, 255, 0.5);
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-    
-    button:hover {
-        background: linear-gradient(145deg, #e0e0e0, #d0d0d0);
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2),
-                    inset -2px -2px 10px rgba(255, 255, 255, 0.9);
-    }
-    
-    button:active {
-        background: #cccccc;
-        transform: scale(0.95);
-        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
-    }
-    
-    .opr {
-        background: #ff6f61;
-        color: #fff;
-        font-weight: 700;
-    }
-    
-    #eqBtn {
-        background: #1abc9c;
-        color: #fff;
-        font-weight: 900;
-    }
-    
-    .sci {
-        background: #3498db;
-        color: #fff;
-    }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #88cbd4, #f9b7b7);
+}
+
+.calculator {
+    padding: 20px;
+    border: 4px solid #515151;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.display input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 20px;
+    margin: 10px 0;
+    background: #e0f7fa;
+    color: #333;
+    font-size: 40px;
+    text-align: right;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input::placeholder {
+    color: #bbb;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+    background: #ffffff;
+    color: #333;
+    font-size: 22px;
+    font-weight: 600;
+    border: 1px solid #999;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1), -2px -2px 6px rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    background: #f1f1f1;
+    color: #5b5b5b;
+}
+
+button:active {
+    background: #e0e0e0;
+    transform: scale(0.95);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.opr {
+    background: #fa9696;
+    color: #fff;
+    font-weight: 700;
+}
+
+#eqBtn {
+    background: #51bbeb;
+    color: #fff;
+    font-weight: 900;
+}
+
+.sci {
+    background: #41c1d0;
+    color: #fff;
+}
+
     
     #logo {
         margin-top: 1%;
@@ -343,14 +337,14 @@
     }
     
     .symbol {
-        position: absolute;
-        color: #000;
-        font-size: 60px;
-        animation: fall 25s linear infinite;
-        transform: translateX(calc(100vw * -2));
-        width: 100vw;
-        z-index: 0;
-    }
+    position: absolute;
+    color: #000; 
+    font-size: 60px;
+    animation: fall 25s linear infinite;
+    transform: translateX(calc(100vw * -2));
+    width: 100vw;
+    z-index: -1; 
+}
     
     .symbol:nth-child(2) { animation-delay: 4s; }
     .symbol:nth-child(3) { animation-delay: 8s; }
@@ -521,7 +515,7 @@
     }
 </style>
 
-<script src="JavaScript\app.js"></script>
+<script src="Calculator-Hub\JavaScript\app.js"></script>
 
 <script>
     const themeCircles = document.querySelectorAll('.theme-circle');
@@ -564,7 +558,11 @@
     document.getElementById('closeBtn').addEventListener('click', function() {
         document.getElementById('popupOverlay').classList.remove('show-popup');
     });
+
+    
 </script>
 
 </body>
 </html>
+
+

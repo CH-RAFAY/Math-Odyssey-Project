@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
     const symbols = ['+', '-', '×', '÷', '√', 'π', '∫', '∑', 'θ', '∞'];
 
-    // Generate symbols and append to body
+
     symbols.forEach((symbol, index) => {
         const span = document.createElement('span');
         span.textContent = symbol;
         span.classList.add('symbol');
         span.style.left = `${Math.random() * 100}vw`;
-        span.style.animationDelay = `${index * 4}s`; // Adjust delay for each symbol
+        span.style.animationDelay = `${index * 4}s`; 
         body.appendChild(span);
     });
 });
@@ -19,7 +19,7 @@ let buttons = document.querySelectorAll("button");
 buttons.forEach(function(button) {
     button.addEventListener("click", function(event) {
         if (button.id === 'popupBtn' || button.id === 'closeBtn') {
-            return; // Skip processing if the button is for the popup
+            return; 
         }
         let value = this.textContent;
         switch(value) {
@@ -68,10 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const popupOverlay = document.getElementById("popupOverlay");
     const closeBtn = document.getElementById("closeBtn");
 
-    // Prevent calculator button clicks
+
     const stopEventPropagation = (event) => {
-        event.preventDefault(); // Prevent the default action
-        event.stopPropagation(); // Stop the event from bubbling up
+        event.preventDefault(); 
+        event.stopPropagation(); 
     };
 
     popupBtn.addEventListener("click", (event) => {
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         popupOverlay.classList.remove("show-popup");
     });
 
-    // Close popup if user clicks outside the content
+
     popupOverlay.addEventListener("click", (event) => {
         if (event.target === popupOverlay) {
             popupOverlay.classList.remove("show-popup");
