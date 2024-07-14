@@ -13,9 +13,9 @@
     <div id="popupOverlay" class="popup-overlay">
         <div class="popup-content">
             <img src="Images\3D Black.png" alt="Company Logo" class="popup-logo">
-            <h2>License Information</h2>
-            <p>This software is licensed under the XYZ license.</p>
-            <p>&copy; 2024 Company Name. All rights reserved.</p>
+            <h2>All rights reserved.</h2><br>
+            <p>This software is licensed under strict terms. Redistribution and use in source and binary forms, with or without modification, are strictly prohibited without express written permission from Chaudhary Abdul Rafay.</p><br>
+            <p>&copy; 2024 Chaudhary Abdul Rafay. </p>
             <button id="closeBtn" class="close-button">Close</button>
         </div>
     </div>
@@ -116,14 +116,14 @@
     }
 
     .popup-content {
-        width: 40%;
+        width: 55%;
         padding: 20px;
         background: #ffffff;
         border-radius: 20px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         text-align: center;
         max-width: 90%;
-        height: 40%;
+        height: auto;
     }
 
     .popup-logo {
@@ -132,6 +132,23 @@
         margin-bottom: 20px;
     }
 
+    .close-button {
+        width: 100px;
+        height: 50px;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #3498db;
+        color: #ffffff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: 16px;
+    }
+
+    .close-button:hover {
+        background: #2980b9;
+    }
 
     .show-popup {
         display: flex;
@@ -139,68 +156,70 @@
 
     @media (max-width: 1000px) {
         .popup-content {
-            width: 45%;
+            width: 50%;
             padding: 20px;
             background: #ffffff;
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             text-align: center;
             max-width: 90%;
-            height: 45%;
+            height: auto;
             justify-content: center;
             align-items: center;
         }
     }
 
+
+
     @media (max-width: 680px) {
         .popup-content {
-            width: 65%;
+            width:auto;
             padding: 20px;
             background: #ffffff;
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             text-align: center;
             max-width: 90%;
-            height: 45%;
+            height: auto;
         }
     }
 
     @media (max-width: 560px) {
         .popup-content {
-            width: 70%;
+            width: auto;
             padding: 20px;
             background: #ffffff;
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             text-align: center;
             max-width: 90%;
-            height: 45%;
+            height: auto;
         }
     }
 
     @media (max-width: 480px) {
         .popup-content {
-            width: 75%;
+            width: auto;
             padding: 20px;
             background: #ffffff;
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             text-align: center;
             max-width: 90%;
-            height: 46%;
+            height: auto;
         }
     }
 
     @media (max-width: 380px) {
         .popup-content {
-            width: 85%;
+            width: auto;
             padding: 20px;
             background: #ffffff;
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             text-align: center;
             max-width: 90%;
-            height: 50%;
+            height: auto;
         }
     }
 
